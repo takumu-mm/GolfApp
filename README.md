@@ -106,4 +106,4 @@
 https://www.figma.com/file/dDRSntCSUha2qXLgZTLaYC/GolfApp?type=design&node-id=23%3A497&mode=design&t=5EXTu7cNM60d9ObJ-1
 
 ### ER図
-[![Image from Gyazo](https://i.gyazo.com/623eba41856dda479a17d952eb04fdd1.png)](https://gyazo.com/623eba41856dda479a17d952eb04fdd1)
+[![Image from Gyazo](https://i.gyazo.com/bd30eed0ad3da48d41247832dd3a64c7.png)](https://gyazo.com/bd30eed0ad3da48d41247832dd3a64c7)
