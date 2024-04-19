@@ -13,7 +13,8 @@
 
 ### サービス利用イメージ
 ユーザーのスキルレベルや具体的な問題点に応じるためにカテゴリーを細かく分けることで、簡単に興味のある動画を見つけられるようにします。また、役立った動画を共有することで、ユーザーが自分に適した動画を容易に見つけることができます。
-以下のようにカテゴリーを細分化します。
+以下のようにカテゴリーを細分化します。  
+
 ■ まずはこれ
 - アドレス
 - 握り方
@@ -104,3 +105,6 @@
 
 ### 画面遷移図
 https://www.figma.com/file/dDRSntCSUha2qXLgZTLaYC/GolfApp?type=design&node-id=23%3A497&mode=design&t=5EXTu7cNM60d9ObJ-1
+
+### ER図
+[![Image from Gyazo](https://i.gyazo.com/bd30eed0ad3da48d41247832dd3a64c7.png)](https://gyazo.com/bd30eed0ad3da48d41247832dd3a64c7)
