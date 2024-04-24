@@ -1,0 +1,60 @@
+ja:
+  defaults:
+    post: 投稿
+    create: 作成
+    search_word: 検索ワード
+    edit: 編集
+    delete_confirm: 削除しますか？
+    password_reset: パスワードリセット
+    flash_message:
+      require_login: ログインしてください
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成出来ませんでした"
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新出来ませんでした"
+      deleted: "%{item}を削除しました"
+  header:
+    login: ログイン
+    logout: ログアウト
+    user_registration: ユーザー登録
+    profile: マイページ
+    basic: 基本
+    address: アドレス
+    grip: 握り方
+    basic_swing: 基本スイング
+    club: クラブ
+    driver: ドライバー
+    iron: アイアン
+    wood: ウッド
+    utility: UT
+    putter: パター
+    environment: 環境
+    bunker: バンカー
+    rough: ラフ
+    gradient: 傾斜
+    strongwind: 強風
+    rain: 雨
+    green_around: グリーン周り
+    approach: アプローチ
+    lob_shot: ロブショット
+    ground_ball: 転がし
+    shot_miss: ショットミス
+    hook: フック
+    slice: スライス
+    duff: ダフリ
+    top: トップ
+    tempura: テンプラ
+    mastering_items: 上達項目
+    flight_distance: 飛距離向上
+    stability: 安定性
+    management: コースマネジメント
+    target: 目標
+    100_or_less: 100切り
+    90_or_less: 90切り
+    80_or_less: 80切り
+    diagnosis: おすすめ診断
+    recommended: おすすめ共有
+  footer:
+    privacy: プライバシーポリシー
+    terms_of_service: 利用規約
+    contact: お問い合わせ
