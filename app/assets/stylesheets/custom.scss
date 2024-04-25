@@ -167,6 +167,18 @@ body {
   justify-content: flex-end;
 }
 
+header h1 {
+  font-size: 80px;
+  color: #fff;
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 .header-btn {
   position: absolute;
   top: 40%;
