@@ -6,6 +6,12 @@ gem 'rails-i18n', '~> 7.0.0'
 
 gem 'ancestry'
 
+gem 'google-api-client', '~> 0.11', require: 'google/apis/youtube_v3'
+
+gem 'whenever', require: false
+
+gem 'dotenv-rails'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 

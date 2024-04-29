@@ -1,0 +1,33 @@
+.category-main {
+  max-width: 70%;
+  background-color: #fff;
+  margin: 20px auto; 
+  padding: 20px; 
+}
+
+.category-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.responsive-iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;  /* モダンなブラウザでサポートされています */
+}
+
+.contents {
+  margin: 0 auto;
+  width: 80%;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 50px;
+
+}
+
+.overview {
+  margin-top: 5px;
+  font-size: 0.8rem;
+  letter-spacing: 0px;
+  line-height: 0.5;
+}

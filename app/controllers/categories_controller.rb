@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   def show
     @category = Category.find_by(name: params[:name])
+    @videos = @category.videos if @category
 
     @basic = Category.find_by(name: '基本')
     @address = @basic.children.find_by(name: 'アドレス')
