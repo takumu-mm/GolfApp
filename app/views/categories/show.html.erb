@@ -1,14 +1,14 @@
 <div class='category-main'>
-  <h1 class='category-title'><%= @category.name %> トップ動画</h1>
+  <h1 class='category-title'><%= @category.name %> おすすめ動画</h1>
   <ul>
     <% @videos.each do |video| %>
       <li class='contents'>
-        <h5><%= video[:title] %></h5>
-        <iframe class="responsive-iframe" src="https://www.youtube.com/embed/<%= video[:youtube_video_id] %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h5><%= video.title %></h5>
+        <iframe class="responsive-iframe" src="https://www.youtube.com/embed/<%= video.youtube_video_id %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <div class='overview'>
-          <p>チャンネル名:  <%= video[:channel_name] %></p>
-          <p>再生回数: <%= video[:view_count] %> 回</p>
-          <p><i class="bi bi-hand-thumbs-up-fill"></i> <%= video[:like_count] %></p>
+          <p>チャンネル名:  <%= video.channel_name %></p>
+          <p>再生回数: <%= video.view_count %> 回</p>
+          <p><i class="bi bi-hand-thumbs-up-fill"></i> <%= video.like_count %></p>
         </div>
       </li>
     <% end %>
