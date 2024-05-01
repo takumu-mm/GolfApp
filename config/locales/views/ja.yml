@@ -13,6 +13,26 @@ ja:
       updated: "%{item}を更新しました"
       not_updated: "%{item}を更新出来ませんでした"
       deleted: "%{item}を削除しました"
+  helpers:
+    submit:
+      create: 登録
+      submit: 保存
+      update: 更新
+      delete: 削除
+    label:
+      email: メールアドレス
+      password: パスワード
+      user:
+        remember_me: "ログイン情報を記憶する"
+  devise:
+    registrations:
+      new:
+        title: ユーザー登録
+    sessions:
+      new:
+        title: ログイン
+        login: ログイン
+    rememberable: "ログイン情報を記憶する"
   header:
     login: ログイン
     logout: ログアウト
