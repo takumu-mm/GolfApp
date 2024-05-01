@@ -2,17 +2,11 @@ ja:
   activerecord:
     models:
       user: ユーザー
-      comment: コメント
     attributes:
       user:
         email: メールアドレス
         name: ユーザー名
         password: パスワード
         password_confirmation: パスワード確認
-        avatar: アバター
-      board:
-        title: タイトル
-        body: 本文
-        board_image: サムネイル
-      comment:
-        body: コメント
+        
+
