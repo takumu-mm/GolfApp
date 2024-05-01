@@ -1,6 +1,10 @@
 <header>
   <div class = 'header-top'>
     <h1>GolfUp</h1>
+    <div class = 'header-btn'>
+      <%= link_to 'ログイン' , new_user_session_path, class: 'btn btn-primary' %>
+      <%= link_to '新規登録' , new_user_registration_path, class: 'btn btn-primary' %>
+    </div>
   </div>
   <nav class='navbar navbar-expand-lg navigation'>
     <button class='navbar-toggler' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent'
@@ -79,17 +83,6 @@
         </li>
         <li class='nav-item dropdown'>
           <%= link_to t('header.recommended'), '#', class: 'nav-link' %>
-        </li>
-        <li class='nav-item dropdown '>
-          <%= link_to('#', class: 'nav-link', data: { bs_toggle: 'dropdown' }, aria: { haspopup: 'true',  expanded: 'false' }, id: 'header-profile' ) do %>
-            <i class="bi bi-house-door-fill"></i>
-          <% end %>
-          <div class='dropdown-menu dropdown-menu-end'>
-            <div class='dropdown-item'><%= current_user.name %></div>
-            <div class='dropdown-divider'></div>
-            <%= link_to t('header.profile'), '#', class: 'dropdown-item' %>
-            <%= link_to t('header.logout'), destroy_user_session_path, class: 'dropdown-item', data: { turbo_method: :delete } %>
-          </div>
         </li>
       </ul>
     </div>
