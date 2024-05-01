@@ -7,8 +7,8 @@
         <iframe class="responsive-iframe" src="https://www.youtube.com/embed/<%= video.youtube_video_id %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <div class='overview'>
           <p>チャンネル名:  <%= video.channel_name %></p>
-          <p>再生回数: <%= video.view_count %> 回</p>
-          <p><i class="bi bi-hand-thumbs-up-fill"></i> <%= video.like_count %></p>
+          <p>再生回数: <%= unit_to_number(video.view_count) %> 回</p>
+          <p><i class="bi bi-hand-thumbs-up-fill"></i> <%= unit_to_number(video.like_count) %></p>
         </div>
       </li>
     <% end %>
