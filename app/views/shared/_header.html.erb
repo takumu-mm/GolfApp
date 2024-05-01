@@ -27,7 +27,7 @@
             <%= link_to t('header.driver') , category_path('ドライバー'), class: 'dropdown-item' %>
             <%= link_to t('header.iron') , category_path('アイアン'), class: 'dropdown-item' %>
             <%= link_to t('header.wood') , category_path('ウッド'), class: 'dropdown-item' %>
-            <%= link_to t('header.utility') , category_path('UT'), class: 'dropdown-item' %>
+            <%= link_to t('header.utility') , category_path('ユーティリティ'), class: 'dropdown-item' %>
             <%= link_to t('header.putter') , category_path('パター'), class: 'dropdown-item' %>
           </div>
         </li>
@@ -56,13 +56,15 @@
             <%= link_to t('header.slice') , category_path('スライス'), class: 'dropdown-item' %>
             <%= link_to t('header.duff') , category_path('ダフリ'), class: 'dropdown-item' %>
             <%= link_to t('header.top') , category_path('トップ'), class: 'dropdown-item' %>
+            <%= link_to t('header.shank') , category_path('シャンク'), class: 'dropdown-item' %>
+            <%= link_to t('header.chunk') , category_path('チャックリ'), class: 'dropdown-item' %>
             <%= link_to t('header.tempura') , category_path('テンプラ'), class: 'dropdown-item' %>
           </div>
         </li>
         <li class='nav-item dropdown '>
           <%= link_to t('header.mastering_items'), '#', class: 'nav-link', 'data-bs-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false' %>
           <div class='dropdown-menu dropdown-menu-end'>
-            <%= link_to t('header.flight_distance') , category_path('飛距離向上'), class: 'dropdown-item' %>
+            <%= link_to t('header.flight_distance') , category_path('飛距離'), class: 'dropdown-item' %>
             <%= link_to t('header.stability') , category_path('安定性'), class: 'dropdown-item' %>
             <%= link_to t('header.management') , category_path('コースマネジメント'), class: 'dropdown-item' %>
           </div>

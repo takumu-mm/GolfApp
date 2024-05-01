@@ -26,7 +26,7 @@ ja:
     driver: ドライバー
     iron: アイアン
     wood: ウッド
-    utility: UT
+    utility: ユーティリティ
     putter: パター
     environment: 環境
     bunker: バンカー
@@ -43,6 +43,8 @@ ja:
     slice: スライス
     duff: ダフリ
     top: トップ
+    shank: シャンク
+    chunk: チャックリ
     tempura: テンプラ
     mastering_items: 上達項目
     flight_distance: 飛距離向上
