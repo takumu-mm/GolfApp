@@ -13,7 +13,7 @@ class YoutubeService
 
     search_response = YouTube.list_searches(
       'id,snippet', q: "ゴルフ #{search_keyword}",
-      max_results: 20, type: 'video', order: 'viewCount',
+      max_results: 50, type: 'video', order: 'viewCount',
       region_code: 'JP', relevance_language: 'ja'
     )
 
@@ -22,15 +22,10 @@ class YoutubeService
 
     sorted_videos = video_details.items.select do |video|
       title = video.snippet.title.downcase
-      description = video.snippet.description.downcase
       tags = (video.snippet.tags || []).map(&:downcase)
 
-      # 関連キーワードのいずれかがタイトル、説明、タグに含まれているかをチェック
-    related_keywords.any? { |keyword| 
-      title.include?(keyword.downcase) || 
-      description.include?(keyword.downcase) || 
-      tags.any? { |tag| tag.include?(keyword.downcase) }
-      }
+    # 関連キーワードのいずれかがタイトルに含まれているかをチェック
+    related_keywords.any? { |keyword| title.include?(keyword.downcase) }
     end.sort_by do |video|
       -video.statistics.like_count.to_i * video.statistics.view_count.to_i
     end.first(10)
@@ -56,12 +51,12 @@ class YoutubeService
       category = Category.find_or_create_by(name: category_name)
       videos = new.fetch_top_videos_by_category(category_name)
       videos.each do |video_data|
-        video = Video.find_or_create_by(youtube_video_id: video_data[:youtube_video_id]) do |v|
-          v.title = video_data[:title]
-          v.channel_name = video_data[:channel_name]
-          v.view_count = video_data[:view_count]
-          v.like_count = video_data[:like_count]
-        end
+        video = Video.find_or_initialize_by(youtube_video_id: video_data[:youtube_video_id])
+        video.title = video_data[:title]
+        video.channel_name = video_data[:channel_name]
+        video.view_count = video_data[:view_count]
+        video.like_count = video_data[:like_count]
+        video.save
         CategoryVideo.find_or_create_by(video: video, category: category)
       end
     end
