@@ -53,7 +53,7 @@ ja:
     bunker: バンカー
     rough: ラフ
     gradient: 傾斜
-    strongwind: 強風
+    strong_wind: 強風
     rain: 雨
     green_around: グリーン周り
     approach: アプローチ
@@ -63,18 +63,18 @@ ja:
     hook: フック
     slice: スライス
     duff: ダフリ
-    top: トップ
+    topped_shot: トップ
     shank: シャンク
     chunk: チャックリ
-    tempura: テンプラ
+    skied_ball: テンプラ
     mastering_items: 上達項目
     flight_distance: 飛距離向上
     stability: 安定性
     management: コースマネジメント
     target: 目標
-    100_or_less: 100切り
-    90_or_less: 90切り
-    80_or_less: 80切り
+    hundred_or_less: 100切り
+    ninety_or_less: 90切り
+    eighty_or_less: 80切り
     diagnosis: おすすめ診断
     recommended: おすすめ共有
   footer:
