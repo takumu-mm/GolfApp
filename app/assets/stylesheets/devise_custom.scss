@@ -36,6 +36,20 @@
   opacity: 0.65;
 }
 
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"],
+.field input[type="submit"] {
+  border: 1px solid #ced4da; /* フォームの入力欄の枠線を設定 */
+  border-radius: 5px; /* 入力欄の角を丸くする */
+  padding: 10px; /* 入力欄の内側の余白を設定 */
+  font-size: 16px; /* フォントサイズを設定 */
+  width: 100%; /* 入力欄の幅を100%に設定 */
+  box-sizing: border-box; /* ボックスサイズをボーダーボックスに設定 */
+  margin-bottom: 15px; /* 入力欄の下部マージンを設定 */
+}
+
+
 .field input[type="text"]:focus,
 .field input[type="email"]:focus,
 .field input[type="password"]:focus {
@@ -72,12 +86,6 @@
   width: 100%; /* アクションボタンの幅を100%に設定 */
 }
 
-.field input[type="text"],
-.field input[type="email"],
-.field input[type="password"] {
-    width: 100%;
-}
-
 .link-container {
   display: flex;
   justify-content: center;
@@ -89,4 +97,53 @@
 }
 .link-container a:last-child {
   margin-right: 0; /* 最後のリンクの右側マージンを削除 */
+}
+
+#error_explanation {
+  background-color: #f8d7da; /* 背景色を淡い赤に設定 */
+  color: #721c24; /* テキスト色を濃い赤に設定 */
+  border: 1px solid #f5c6cb; /* 枠線をピンクに設定 */
+  padding: 20px; /* 内側の余白を設定 */
+  border-radius: 5px; /* 枠線の角を丸くする */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 影を追加 */
+  margin-bottom: 15px; /* 入力欄の下部マージンを設定 */
+}
+
+#error_explanation h2 {
+  color: #721c24; /* タイトルのテキスト色を濃い赤に設定 */
+  margin-top: 0; /* タイトルの上部マージンをゼロに設定 */
+  font-size: large;
+}
+
+#error_explanation ul {
+  list-style-type: none; /* リストのマーカーを非表示に */
+  padding: 0; /* 内側の余白を設定 */
+}
+
+#error_explanation ul li {
+  color: #721c24; /* メッセージのテキスト色を濃い赤に設定 */
+  margin-bottom: 5px; /* 各メッセージの下部マージンを設定 */
+}
+
+.flash-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.flash-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
