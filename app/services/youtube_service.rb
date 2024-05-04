@@ -7,9 +7,8 @@ class YoutubeService
   def fetch_top_videos_by_category(category_name)
     category = Category.find_by(name: category_name)
     return [] unless category
-    search_keyword = category.search_keyword || category.name
+    search_keyword = category.search_keyword
     related_keywords = category.related_keywords.split(',').map(&:strip)  # カテゴリの関連キーワードを配列に変換
-    related_keywords << category_name  # カテゴリ名も検索キーワードに追加
 
     search_response = YouTube.list_searches(
       'id,snippet', q: "ゴルフ #{search_keyword}",
@@ -43,9 +42,10 @@ class YoutubeService
 
   def self.insert_initial_data
     categories = [
-      'アドレス', '握り方', '基本スイング', 'ドライバー', 'アイアン', 'ウッド', 'ユーティリティ', 'パター',
-      'バンカー', 'ラフ', '傾斜', '強風', '雨', 'アプローチ', 'ロブショット', '転がし', 'フック', 'スライス', 
-      'ダフリ', 'トップ', 'シャンク', 'チャックリ', 'テンプラ', '飛距離', '安定性', 'コースマネジメント', '100切り', '90切り', '80切り'
+      'address', 'grip', 'basic_swing', 'driver', 'iron', 'wood', 'utility', 'putter',
+      'bunker', 'rough', 'gradient', 'strong_wind', 'rain', 'approach', 'lob_shot', 'ground_ball', 
+      'hook', 'slice', 'duff', 'topped_shot', 'shank', 'chunk', 'skied_ball', 
+      'flight_distance', 'stability', 'management', 'hundred_or_less', 'ninety_or_less', 'eighty_or_less'
     ]
     categories.each do |category_name|
       category = Category.find_or_create_by(name: category_name)

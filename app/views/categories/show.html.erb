@@ -1,5 +1,5 @@
 <div class='main-contents'>
-  <h1 class='title-contents'><%= @category.name %> おすすめ動画</h1>
+  <h1 class='title-contents'><%= t('header.' + @category.name) %> おすすめ動画</h1>
   <ul>
     <% @videos.each do |video| %>
       <li class='contents'>
