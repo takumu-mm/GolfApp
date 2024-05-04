@@ -13,6 +13,7 @@ gem 'whenever', require: false
 gem 'dotenv-rails'
 
 gem 'devise'
+gem 'devise-i18n'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"
