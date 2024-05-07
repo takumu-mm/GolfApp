@@ -85,3 +85,5 @@ production:
   database: golfapp_production
   username: golfapp
   password: <%= ENV["GOLFAPP_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  
