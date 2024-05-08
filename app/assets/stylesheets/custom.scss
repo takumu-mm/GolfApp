@@ -250,3 +250,14 @@ header h1 {
   text-align: center;
   margin-bottom: 50px;
 }
+
+.navbar-toggler {
+  padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
+  font-size: var(--bs-navbar-toggler-font-size);
+  line-height: 1;
+  color: #fff;
+  background-color: transparent;
+  border: var(--bs-border-width) solid #fff;
+  border-radius: var(--bs-navbar-toggler-border-radius);
+  transition: var(--bs-navbar-toggler-transition);
+}
