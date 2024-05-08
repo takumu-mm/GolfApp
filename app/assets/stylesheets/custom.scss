@@ -204,6 +204,7 @@ header h1 {
   border: var(--bs-border-width) solid #fff;
   border-radius: var(--bs-navbar-toggler-border-radius);
   transition: var(--bs-navbar-toggler-transition);
+  margin: 0 0 0 auto;
 }
 
 @media screen and (max-width: 768px) {
