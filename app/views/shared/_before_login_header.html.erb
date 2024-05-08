@@ -1,10 +1,6 @@
 <header>
   <div class = 'header-top'>
     <h1>GolfUp</h1>
-    <div class = 'header-btn'>
-      <%= link_to 'ログイン' , new_user_session_path, class: 'btn btn-primary' %>
-      <%= link_to '新規登録' , new_user_registration_path, class: 'btn btn-primary' %>
-    </div>
   </div>
   <nav class='navbar navbar-expand-lg navigation'>
     <button class='navbar-toggler' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent'
@@ -15,7 +11,7 @@
       <ul class='navbar-nav ms-auto main-nav align-items-center'>
         <li class='nav-item dropdown '>
           <%= link_to t('header.basic'), '#', class: 'nav-link', 'data-bs-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false' %>
-          <div class='dropdown-menu dropdown-menu-end'>
+          <div class='dropdown-menu'>
             <%= link_to t('header.address') , category_path('address'), class: 'dropdown-item' %>
             <%= link_to t('header.grip') , category_path('grip'), class: 'dropdown-item' %>
             <%= link_to t('header.basic_swing') , category_path('basic_swing'), class: 'dropdown-item' %>
@@ -23,7 +19,7 @@
         </li>
         <li class='nav-item dropdown '>
           <%= link_to t('header.club'), '#', class: 'nav-link', 'data-bs-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false' %>
-          <div class='dropdown-menu dropdown-menu-end'>
+          <div class='dropdown-menu'>
             <%= link_to t('header.driver') , category_path('driver'), class: 'dropdown-item' %>
             <%= link_to t('header.iron') , category_path('iron'), class: 'dropdown-item' %>
             <%= link_to t('header.wood') , category_path('wood'), class: 'dropdown-item' %>
@@ -33,7 +29,7 @@
         </li>
         <li class='nav-item dropdown '>
           <%= link_to t('header.environment'), '#', class: 'nav-link', 'data-bs-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false' %>
-          <div class='dropdown-menu dropdown-menu-end'>
+          <div class='dropdown-menu'>
             <%= link_to t('header.bunker') , category_path('bunker'), class: 'dropdown-item' %>
             <%= link_to t('header.rough') , category_path('rough'), class: 'dropdown-item' %>
             <%= link_to t('header.gradient') , category_path('gradient'), class: 'dropdown-item' %>
@@ -43,7 +39,7 @@
         </li>
         <li class='nav-item dropdown '>
           <%= link_to t('header.green_around'), '#', class: 'nav-link', 'data-bs-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false' %>
-          <div class='dropdown-menu dropdown-menu-end'>
+          <div class='dropdown-menu'>
             <%= link_to t('header.approach') , category_path('approach'), class: 'dropdown-item' %>
             <%= link_to t('header.lob_shot') , category_path('lob_shot'), class: 'dropdown-item' %>
             <%= link_to t('header.ground_ball') , category_path('ground_ball'), class: 'dropdown-item' %>
@@ -52,7 +48,7 @@
         </li>
         <li class='nav-item dropdown '>
           <%= link_to t('header.shot_miss'), '#', class: 'nav-link', 'data-bs-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false' %>
-          <div class='dropdown-menu dropdown-menu-end'>
+          <div class='dropdown-menu'>
             <%= link_to t('header.hook') , category_path('hook'), class: 'dropdown-item' %>
             <%= link_to t('header.slice') , category_path('slice'), class: 'dropdown-item' %>
             <%= link_to t('header.duff') , category_path('duff'), class: 'dropdown-item' %>
@@ -64,7 +60,7 @@
         </li>
         <li class='nav-item dropdown '>
           <%= link_to t('header.mastering_items'), '#', class: 'nav-link', 'data-bs-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false' %>
-          <div class='dropdown-menu dropdown-menu-end'>
+          <div class='dropdown-menu'>
             <%= link_to t('header.flight_distance') , category_path('flight_distance'), class: 'dropdown-item' %>
             <%= link_to t('header.stability') , category_path('stability'), class: 'dropdown-item' %>
             <%= link_to t('header.management') , category_path('management'), class: 'dropdown-item' %>
@@ -72,17 +68,23 @@
         </li>
         <li class='nav-item dropdown '>
           <%= link_to t('header.target'), '#', class: 'nav-link', 'data-bs-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false' %>
-          <div class='dropdown-menu dropdown-menu-end'>
+          <div class='dropdown-menu'>
             <%= link_to t('header.hundred_or_less') , category_path('hundred_or_less'), class: 'dropdown-item' %>
             <%= link_to t('header.ninety_or_less') , category_path('ninety_or_less'), class: 'dropdown-item' %>
             <%= link_to t('header.eighty_or_less') , category_path('eighty_or_less'), class: 'dropdown-item' %>
           </div>
         </li>
-        <li class='nav-item dropdown'>
+        <li class='nav-item'>
           <%= link_to t('header.diagnosis'), '#', class: 'nav-link' %>
         </li>
-        <li class='nav-item dropdown'>
+        <li class='nav-item'>
           <%= link_to t('header.recommended'), '#', class: 'nav-link' %>
+        </li>
+        <li class='nav-item'>
+          <%= link_to 'ログイン' , new_user_session_path, class: 'nav-link' %>
+        </li>
+        <li class='nav-item'>
+          <%= link_to '新規登録' , new_user_registration_path, class: 'nav-link' %>
         </li>
       </ul>
     </div>

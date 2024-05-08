@@ -147,3 +147,89 @@
   
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"],
+.field input[type="submit"] {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem; /* デフォルトのフォントサイズ */
+  width: 100%; /* 幅は100% */
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .field input[type="text"],
+  .field input[type="email"],
+  .field input[type="password"],
+  .field input[type="submit"] {
+    font-size: 0.8rem; /* スマートフォンなどの小さい画面ではフォントサイズを小さくする */
+    min-width: 200px; /* 幅を最小200pxに設定 */
+  }
+
+  .form-contents {
+    text-align: left; /* フォームを左寄せにする */
+    width: 100%;
+  }
+
+  .field {
+    grid-template-columns: unset; /* グリッドレイアウトを解除 */
+    margin-bottom: unset;
+  }
+
+  .field label {
+    margin-bottom: 5px; /* ラベルの下部マージンを設定 */
+  }
+
+  .actions {
+    flex-direction: column; /* アクションボタンを縦方向に配置 */
+  }
+
+  .link-container {
+    display: grid;
+    text-align: center;
+  }
+
+  #error_explanation h2 {
+    font-size: 16px;
+  }
+  
+  #error_explanation ul {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .field input[type="text"],
+  .field input[type="email"],
+  .field input[type="password"],
+  .field input[type="submit"] {
+    font-size: 0.8rem; /* スマートフォンなどの小さい画面ではフォントサイズを小さくする */
+    min-width: 200px; /* 幅を最小200pxに設定 */
+  }
+
+  .form-contents {
+    text-align: left; /* フォームを左寄せにする */
+    width: 80%;
+  }
+
+  .field {
+    grid-template-columns: unset; /* グリッドレイアウトを解除 */
+    margin-bottom: unset;
+  }
+
+  .field label {
+    margin-bottom: 5px; /* ラベルの下部マージンを設定 */
+  }
+
+  .actions {
+    flex-direction: column; /* アクションボタンを縦方向に配置 */
+  }
+  .link-container {
+    display: grid;
+    text-align: center;
+  }
+}
