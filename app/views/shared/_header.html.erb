@@ -86,8 +86,15 @@
           <% end %>
           <div class='dropdown-menu'>
             <div class='dropdown-item'><%= current_user.name %></div>
+            <%= link_to '#', class: 'nav-link', data: { bs_toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' }, id: 'header-profile' do %>
+            <% if @profile.present? %>
+              <%= image_tag @profile.avatar.url, class: 'rounded-circle mr15', width: '40', height: '40' %>
+            <% else %>
+              <%= image_tag 'default-avatar.png', class: 'rounded-circle mr15', width: '40', height: '40' %>
+            <% end %>
+          <% end %>
             <div class='dropdown-divider'></div>
-            <%= link_to t('header.profile'), '#', class: 'dropdown-item' %>
+            <%= link_to t('header.profile'), profile_path, class: 'dropdown-item' %>
             <%= link_to t('header.logout'), destroy_user_session_path, class: 'dropdown-item', data: { turbo_method: :delete } %>
           </div>
         </li>

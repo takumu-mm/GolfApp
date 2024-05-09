@@ -13,6 +13,8 @@ ja:
       updated: "%{item}を更新しました"
       not_updated: "%{item}を更新出来ませんでした"
       deleted: "%{item}を削除しました"
+      errors_count: "%{count} 件のエラーメッセージがあります"
+      profile_update: プロフィールを更新しました
   helpers:
     submit:
       create: 登録
@@ -23,7 +25,9 @@ ja:
     label:
       email: メールアドレス
       password: パスワード
+      avatar: アバター
       user:
+        name: "ユーザー名"
         remember_me: "ログイン情報を記憶する"
   devise:
     registrations:
@@ -81,3 +85,51 @@ ja:
     privacy: プライバシーポリシー
     terms_of_service: 利用規約
     contact: お問い合わせ
+  categories:
+    driver: "ドライバー"
+    iron: "アイアン"
+    wood: "ウッド"
+    utility: "ユーティリティ"
+    putter: "パター"
+    bunker: "バンカー"
+    rough: "ラフ"
+    gradient: "傾斜"
+    strong_wind: "強風"
+    rain: "雨"
+    approach: "アプローチ"
+    lob_shot: "ロブショット"
+    ground_ball: "転がし"
+    flight_distance: "飛距離"
+    stability: "安定性"
+    management: "マネジメント"
+    hook: "フック"
+    slice: "スライス"
+    duff: "ダフリ"
+    topped_shot: "トップ"
+    shank: "シャンク"
+    chunk: "チャックリ"
+    skied_ball: "テンプラ"
+  options:
+    score: ["70台", "80台", "90台", "100台", "110以上", "初心者"]
+    ball_type: ["ドロー", "フェード", "ストレート"]
+  profiles:
+    edit:
+      title: "プロフィール編集"
+      score: "アベレージスコア"
+      ball_type: "持ち球"
+      sports_experience: "スポーツ経験"
+      strengths: 得意なこと
+      weakness: 苦手なこと
+      top_page: トップページ
+      profile_show: 戻る
+    show:
+      title: "プロフィール詳細"
+      score: "アベレージスコア"
+      ball_type: "持ち球"
+      strengths: 得意なこと
+      weakness: 苦手なこと
+      sports_experience: "スポーツ経験"
+      avatar: "アバター画像"
+      edit_link: "プロフィールを編集"
+      not_set: "設定されていません"
+      top_page: トップページ
