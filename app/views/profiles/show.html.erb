@@ -1,0 +1,72 @@
+<h1><%= I18n.t('profiles.show.title') %></h1>
+
+<div>
+  <h4><%= I18n.t('helpers.label.user.name') %></h4>
+  <p><%= @profile.user.name %></p>
+</div>
+
+<div>
+  <h4><%= I18n.t('helpers.label.email') %></h4>
+  <p><%= @profile.user.email %></p>
+</div>
+
+<div>
+  <h4><%= I18n.t('profiles.show.score') %></h4>
+  <% if @profile.score.present? %>
+    <p><%= @profile.score %></p>
+  <% else %>
+    <li><%= I18n.t('profiles.show.not_set') %></li>
+  <% end %>
+</div>
+
+<div>
+  <h4><%= I18n.t('profiles.show.ball_type') %></h4>
+  <% if @profile.ball_type.present? %>
+    <p><%= @profile.ball_type %></p>
+  <% else %>
+    <li><%= I18n.t('profiles.show.not_set') %></li>
+  <% end %>
+</div>
+
+<div>
+  <h4><%= I18n.t('profiles.show.strengths') %></h4>
+  <ul>
+    <% if @profile.translated_strengths.any? %>
+      <% @profile.translated_strengths.each do |strength| %>
+        <li><%= strength %></li>
+      <% end %>
+    <% else %>
+      <li><%= I18n.t('profiles.show.not_set') %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  <h4><%= I18n.t('profiles.show.weakness') %></h4>
+  <ul>
+    <% if @profile.translated_weaknesses.any? %>
+      <% @profile.translated_weaknesses.each do |weakness| %>
+        <li><%= weakness %></li>
+      <% end %>
+    <% else %>
+      <li><%= I18n.t('profiles.show.not_set') %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  <h4><%= I18n.t('profiles.show.sports_experience') %></h4>
+  <% if @profile.sports_experience.present? %>
+    <p><%= @profile.sports_experience %></p>
+  <% else %>
+    <li><%= I18n.t('profiles.show.not_set') %></li>
+  <% end %>
+</div>
+
+<div>
+  <h4><%= I18n.t('profiles.show.avatar') %></h4>
+  <td><%= image_tag @profile.avatar.url, class: 'rounded-circle', size: '100x100' %></td>
+</div>
+
+<%= link_to I18n.t('profiles.show.edit_link'), edit_profile_path(@profile), class: "btn btn-primary" %>
+<%= link_to I18n.t('profiles.show.top_page'), root_path %>

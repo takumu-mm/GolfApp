@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_01_055425) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_09_053522) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,6 +32,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_01_055425) do
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_category_videos_on_category_id"
     t.index ["video_id"], name: "index_category_videos_on_video_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "score"
+    t.string "ball_type"
+    t.text "strengths"
+    t.text "weakness"
+    t.string "sports_experience"
+    t.string "avatar"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,4 +73,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_01_055425) do
 
   add_foreign_key "category_videos", "categories"
   add_foreign_key "category_videos", "videos"
+  add_foreign_key "profiles", "users"
 end

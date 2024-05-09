@@ -118,6 +118,9 @@ ja:
     shared:
       links:
         back: 戻る
+        login_page: ログインページへ
+        user_registration: ユーザー登録
+        password_recovery: パスワードを忘れた場合はこちら
         didn_t_receive_confirmation_instructions: アカウント確認のメールを受け取っていませんか？
         didn_t_receive_unlock_instructions: アカウントのロック解除方法のメールを受け取っていませんか？
         forgot_your_password: パスワードを忘れましたか？
