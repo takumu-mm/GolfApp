@@ -1,69 +1,74 @@
-<h1><%= I18n.t('profiles.edit.title') %></h1>
+<div class='main-contents'>
+  <h1 class='title-contents'><%= I18n.t('profiles.edit.title') %></h1>
 
-<%= form_for @profile, url: profile_path(@profile), method: :patch do |f| %>
-  <% unique_errors = @profile.errors.full_messages.uniq %>
-  <% if unique_errors.any? %>
-    <div id="error_explanation">
-      <h2><%= t('defaults.flash_message.errors_count', count: unique_errors.size) %></h2>
-      <ul>
-        <% unique_errors.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <div class='form-contents'>
+    <%= form_for @profile, url: profile_path(@profile), method: :patch do |f| %>
+      <% unique_errors = @profile.errors.full_messages.uniq %>
+      <% if unique_errors.any? %>
+        <div id="error_explanation">
+          <h2><%= t('defaults.flash_message.errors_count', count: unique_errors.size) %></h2>
+          <ul>
+            <% unique_errors.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <%= f.fields_for :user_attributes, @profile.user do |user_fields| %>
+        <div>
+          <%= user_fields.label :name, I18n.t('activerecord.attributes.user.name') %>
+          <%= user_fields.text_field :name %>
+        </div>
+
+        <div>
+          <%= user_fields.label :email, I18n.t('activerecord.attributes.user.email') %>
+          <%= user_fields.email_field :email %>
+        </div>
+      <% end %>
+
+      <div>
+        <%= f.label :score, I18n.t('profiles.edit.score') %>
+        <%= f.select :score, options_for_select([''].concat(@score_options), @profile.score) %>
+      </div>
+
+      <div>
+        <%= f.label :ball_type,I18n.t('profiles.edit.ball_type') %>
+        <%= f.select :ball_type, options_for_select([''].concat(@ball_type_options), @profile.ball_type) %>
+      </div>
+
+      <div>
+      <%= f.label :strengths, I18n.t('profiles.edit.strengths') %>
+      <%= f.collection_select :strengths, @strength_options, :last, :first, include_blank: true, multiple: true %>
+      </div>
+
+      <div>
+        <%= f.label :weakness, I18n.t('profiles.edit.weakness') %>
+        <%= f.collection_select :weakness, @weakness_options, :last, :first, include_blank: true, multiple: true %>
+      </div>
+
+      <div>
+        <%= f.label :sports_experience, I18n.t('profiles.edit.sports_experience') %>
+        <%= f.text_field :sports_experience, value: @profile.sports_experience %>
+      </div>
+
+      <div class="mb-3">
+        <%= f.label :avatar, I18n.t('helpers.label.avatar') %>
+        <%= f.file_field :avatar, class: 'form-control mb-3', accept: 'image/*' %>
+        <%= f.hidden_field :avatar_cache %>
+        <div class='mt-3 mb-3'>
+          <%= image_tag @profile.avatar.url,
+                        class: 'rounded-circle',
+                        id: 'preview',
+                        size: '100x100' %>
+        </div>
+      </div>
+
+      <%= f.submit I18n.t('helpers.submit.update'), class: "btn btn-primary" %>
+    <% end %>
+    <div class='link-container'>
+      <%= link_to I18n.t('profiles.edit.top_page'), root_path %>
+      <%= link_to I18n.t('profiles.edit.profile_show'), profile_path %>
     </div>
-  <% end %>
-
-  <%= f.fields_for :user_attributes, @profile.user do |user_fields| %>
-    <div>
-      <%= user_fields.label :name, I18n.t('activerecord.attributes.user.name') %>
-      <%= user_fields.text_field :name %>
-    </div>
-
-    <div>
-      <%= user_fields.label :email, I18n.t('activerecord.attributes.user.email') %>
-      <%= user_fields.email_field :email %>
-    </div>
-  <% end %>
-
-  <div>
-    <%= f.label :score, I18n.t('profiles.edit.score') %>
-    <%= f.select :score, options_for_select([''].concat(@score_options), @profile.score) %>
   </div>
-
-  <div>
-    <%= f.label :ball_type,I18n.t('profiles.edit.ball_type') %>
-    <%= f.select :ball_type, options_for_select([''].concat(@ball_type_options), @profile.ball_type) %>
-  </div>
-
-  <div>
-  <%= f.label :strengths, I18n.t('profiles.edit.strengths') %>
-  <%= f.collection_select :strengths, @strength_options, :last, :first, include_blank: true, multiple: true %>
-  </div>
-
-  <div>
-    <%= f.label :weakness, I18n.t('profiles.edit.weakness') %>
-    <%= f.collection_select :weakness, @weakness_options, :last, :first, include_blank: true, multiple: true %>
-  </div>
-
-  <div>
-    <%= f.label :sports_experience, I18n.t('profiles.edit.sports_experience') %>
-    <%= f.text_field :sports_experience, value: @profile.sports_experience %>
-  </div>
-
-  <div class="mb-3">
-    <%= f.label :avatar, I18n.t('helpers.label.avatar') %>
-    <%= f.file_field :avatar, class: 'form-control mb-3', accept: 'image/*' %>
-    <%= f.hidden_field :avatar_cache %>
-    <div class='mt-3 mb-3'>
-      <%= image_tag @profile.avatar.url,
-                    class: 'rounded-circle',
-                    id: 'preview',
-                    size: '100x100' %>
-    </div>
-  </div>
-
-  <%= f.submit I18n.t('helpers.submit.update') %>
-<% end %>
-
-<%= link_to I18n.t('profiles.edit.top_page'), root_path %>
-<%= link_to I18n.t('profiles.edit.profile_show'), profile_path %>
+</div>
