@@ -24,7 +24,7 @@ class ProfilesController < ApplicationController
   def show; end
 
   def diagnosis
-    @recommended_videos = recommend_videos(@profile)
+    @recommended_videos = recommend_videos(@profile).page(params[:page]).per(10)
   end
 
   def recommend_videos(profile)

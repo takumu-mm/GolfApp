@@ -103,6 +103,19 @@
   list-style-type: disc;
 }
 
+.no-video {
+  margin: 0 auto;
+  width: 60%;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.no-video p {
+  font-size: 16px;
+}
+
 @media screen and (max-width: 768px) {
 
   .profile-contents {
@@ -113,6 +126,11 @@
   .profile-field {
     grid-template-columns: unset; /* グリッドレイアウトを解除 */
   }
+
+  .no-video p {
+    font-size: 8px;
+  }
+  
 }
 
 @media screen and (max-width: 1200px) {
@@ -123,6 +141,10 @@
 
   .profile-field {
     grid-template-columns: unset; /* グリッドレイアウトを解除 */
+  }
+
+  .no-video p {
+    font-size: 10px;
   }
 
 }
