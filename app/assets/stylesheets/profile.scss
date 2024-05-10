@@ -1,0 +1,128 @@
+.profile-contents {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 0 auto;
+}
+
+.profile-field {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  width: 100%;
+  align-items: center;
+}
+
+.profile-field h4 {
+  margin: 0 0 10px 0;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.profile-field p {
+  margin: 0;
+  font-size: 1rem;
+  justify-self: center; /* グリッド内で中央揃えにする */
+  text-align: left; /* テキストは左揃えを維持 */
+  width: 100%; /* pタグがコンテナの幅いっぱいに広がるようにする */
+}
+
+.profile-field ul {
+  padding-left: 0;  // リストのインデントを無効化
+}
+
+.form-contents label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-contents input[type="text"],
+.form-contents input[type="email"],
+.form-contents select,
+.form-contents .form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-contents input[type="text"]:focus,
+.form-contents input[type="email"]:focus,
+.form-contents select:focus,
+.form-contents .form-control:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+.form-contents .btn-primary {
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #4a90e2;
+  color: white;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.form-contents .btn-primary:hover {
+  background-color: #357ab9;
+}
+
+#preview {
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#preview.rounded-circle {
+  border-radius: 50%;
+}
+
+#error_explanation {
+  border: 2px solid #e74c3c;
+  background-color: #fef1f0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#error_explanation h2 {
+  color: #e74c3c;
+  margin: 0 0 10px 0;
+}
+
+#error_explanation ul {
+  padding-left: 20px;
+  margin: 0;
+  list-style-type: disc;
+}
+
+@media screen and (max-width: 768px) {
+
+  .profile-contents {
+    text-align: left; /* フォームを左寄せにする */
+    width: 100%;
+  }
+
+  .profile-field {
+    grid-template-columns: unset; /* グリッドレイアウトを解除 */
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .profile-contents {
+    text-align: left; /* フォームを左寄せにする */
+    width: 80%;
+  }
+
+  .profile-field {
+    grid-template-columns: unset; /* グリッドレイアウトを解除 */
+  }
+
+}
