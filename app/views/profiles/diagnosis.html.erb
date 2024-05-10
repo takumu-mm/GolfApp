@@ -1,0 +1,16 @@
+<div class='main-contents'>
+  <h1 class='title-contents'>おすすめ診断</h1>
+  <ul>
+    <% @recommended_videos.each do |video| %>
+      <li class='contents'>
+        <h5><%= video.title %></h5>
+        <iframe class="responsive-iframe" src="https://www.youtube.com/embed/<%= video.youtube_video_id %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class='overview'>
+          <p>チャンネル名: <%= video.channel_name %></p>
+          <p>再生回数: <%= unit_to_number(video.view_count) %> 回</p>
+          <p><i class="bi bi-hand-thumbs-up-fill"></i> <%= unit_to_number(video.like_count) %></p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

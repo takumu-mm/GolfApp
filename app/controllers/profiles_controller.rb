@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_profile, only: %i[edit update show]
+  before_action :set_profile, only: %i[edit update show diagnosis]
 
   def edit
     load_form_options
@@ -23,6 +23,34 @@ class ProfilesController < ApplicationController
 
   def show; end
 
+  def diagnosis
+    @recommended_videos = recommend_videos(@profile)
+  end
+
+  def recommend_videos(profile)
+    video_ids = []
+  
+    case profile.score
+    when "初心者"
+      video_ids += Category.where(name: ['basic_swing', 'address', 'grip']).joins(:videos).pluck('videos.id')
+    when "110以上"
+      video_ids += Category.where(name: ['basic_swing', 'hundred_or_less']).joins(:videos).pluck('videos.id')
+    when "100台"
+      video_ids += Category.find_by(name: 'hundred_or_less').videos.pluck(:id)
+    when "90台"
+      video_ids += Category.find_by(name: 'ninety_or_less').videos.pluck(:id)
+    when "80台"
+      video_ids += Category.find_by(name: 'eighty_or_less').videos.pluck(:id)
+    end
+  
+    video_ids += recommend_by_weaknesses(profile.weakness) if profile.weakness.present?
+    Video.where(id: video_ids.uniq)
+  end
+
+  def recommend_by_weaknesses(weakness_ids)
+    Category.where(id: weakness_ids).joins(:category_videos).pluck('category_videos.video_id')
+  end
+
   private
 
   def set_profile
@@ -40,7 +68,7 @@ class ProfilesController < ApplicationController
   def load_form_options
     @score_options = I18n.t('options.score')
     @ball_type_options =I18n.t('options.ball_type')
-    @strength_options = Category.where(name: %w[club environment green_around improvement]).map(&:children).flatten.map { |category| [I18n.t("categories.#{category.name}", default: category.name), category.id] }
-    @weakness_options = Category.where(name: %w[club environment green_around shot_miss improvement]).map(&:children).flatten.map { |category| [I18n.t("categories.#{category.name}", default: category.name), category.id] }
+    @strength_options = Category.where(name: %w[club environment green_around mastering_items]).map(&:children).flatten.map { |category| [I18n.t("categories.#{category.name}", default: category.name), category.id] }
+    @weakness_options = Category.where(name: %w[club environment green_around shot_miss mastering_items]).map(&:children).flatten.map { |category| [I18n.t("categories.#{category.name}", default: category.name), category.id] }
   end
 end
