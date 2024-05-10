@@ -123,7 +123,7 @@ ja:
       top_page: トップページ
       profile_show: 戻る
     show:
-      title: "プロフィール詳細"
+      title: "マイページ"
       score: "アベレージスコア"
       ball_type: "持ち球"
       strengths: 強み
@@ -133,3 +133,12 @@ ja:
       edit_link: "プロフィールを編集"
       not_set: "設定されていません"
       top_page: トップページ
+    diagnosis:
+      title: あなたにおすすめの動画
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: "..."
