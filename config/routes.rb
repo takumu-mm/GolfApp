@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   }
   root "static_pages#top"
   resources :categories, param: :name, only: [:show]
-  resource :profile, only: [:show, :edit, :update]
+  resource :profile, only: [:show, :edit, :update] do
+    get 'diagnosis', on: :collection, as: 'diagnosis'
+  end
 end

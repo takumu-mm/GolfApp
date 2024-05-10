@@ -101,7 +101,7 @@ ja:
     ground_ball: "転がし"
     flight_distance: "飛距離"
     stability: "安定性"
-    management: "マネジメント"
+    management: "コースマネジメント"
     hook: "フック"
     slice: "スライス"
     duff: "ダフリ"
@@ -118,16 +118,16 @@ ja:
       score: "アベレージスコア"
       ball_type: "持ち球"
       sports_experience: "スポーツ経験"
-      strengths: 得意なこと
-      weakness: 苦手なこと
+      strengths: 強み
+      weakness: 改善点
       top_page: トップページ
       profile_show: 戻る
     show:
       title: "プロフィール詳細"
       score: "アベレージスコア"
       ball_type: "持ち球"
-      strengths: 得意なこと
-      weakness: 苦手なこと
+      strengths: 強み
+      weakness: 改善点
       sports_experience: "スポーツ経験"
       avatar: "アバター画像"
       edit_link: "プロフィールを編集"
