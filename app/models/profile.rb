@@ -18,7 +18,7 @@ class Profile < ApplicationRecord
     weakness.map do |w_id|
       category = Category.find_by(id: w_id)
       category ? I18n.t("categories.#{category.name}", default: category.name) : nil
-    end.compact 
+    end.compact
   end
 
   private

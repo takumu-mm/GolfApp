@@ -9,13 +9,15 @@ class ProfilesController < ApplicationController
   def update
     user_updated = @profile.user.update_without_password(profile_params[:user_attributes])
     profile_updated = @profile.update(profile_params.except(:user_attributes))
-  
+
     if user_updated && profile_updated
-      redirect_to profile_path(@profile),  notice: I18n.t('defaults.flash_message.profile_update')
+      redirect_to profile_path(@profile), notice: I18n.t('defaults.flash_message.profile_update')
     else
-      @profile.user.errors.full_messages.each do |error|
-        @profile.errors.add(:base, error) unless @profile.errors.full_messages.include?(error)
-      end unless user_updated
+      unless user_updated
+        @profile.user.errors.full_messages.each do |error|
+          @profile.errors.add(:base, error) unless @profile.errors.full_messages.include?(error)
+        end
+      end
       load_form_options
       render :edit, status: :unprocessable_entity
     end
@@ -29,12 +31,12 @@ class ProfilesController < ApplicationController
 
   def recommend_videos(profile)
     video_ids = []
-  
+
     case profile.score
     when "初心者"
-      video_ids += Category.where(name: ['basic_swing', 'address', 'grip']).joins(:videos).pluck('videos.id')
+      video_ids += Category.where(name: %w[basic_swing address grip]).joins(:videos).pluck('videos.id')
     when "110以上"
-      video_ids += Category.where(name: ['basic_swing', 'hundred_or_less']).joins(:videos).pluck('videos.id')
+      video_ids += Category.where(name: %w[basic_swing hundred_or_less]).joins(:videos).pluck('videos.id')
     when "100台"
       video_ids += Category.find_by(name: 'hundred_or_less').videos.pluck(:id)
     when "90台"
@@ -42,7 +44,7 @@ class ProfilesController < ApplicationController
     when "80台"
       video_ids += Category.find_by(name: 'eighty_or_less').videos.pluck(:id)
     end
-  
+
     video_ids += recommend_by_weaknesses(profile.weakness) if profile.weakness.present?
     Video.where(id: video_ids.uniq)
   end
@@ -67,8 +69,12 @@ class ProfilesController < ApplicationController
 
   def load_form_options
     @score_options = I18n.t('options.score')
-    @ball_type_options =I18n.t('options.ball_type')
-    @strength_options = Category.where(name: %w[club environment green_around mastering_items]).map(&:children).flatten.map { |category| [I18n.t("categories.#{category.name}", default: category.name), category.id] }
-    @weakness_options = Category.where(name: %w[club environment green_around shot_miss mastering_items]).map(&:children).flatten.map { |category| [I18n.t("categories.#{category.name}", default: category.name), category.id] }
+    @ball_type_options = I18n.t('options.ball_type')
+    @strength_options = Category.where(name: %w[club environment green_around mastering_items]).map(&:children).flatten.map do |category|
+      [I18n.t("categories.#{category.name}", default: category.name), category.id]
+    end
+    @weakness_options = Category.where(name: %w[club environment green_around shot_miss mastering_items]).map(&:children).flatten.map do |category|
+      [I18n.t("categories.#{category.name}", default: category.name), category.id]
+    end
   end
 end
