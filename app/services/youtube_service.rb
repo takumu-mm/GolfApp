@@ -21,7 +21,6 @@ class YoutubeService
 
     sorted_videos = video_details.items.select do |video|
       title = video.snippet.title.downcase
-      tags = (video.snippet.tags || []).map(&:downcase)
 
     # 関連キーワードのいずれかがタイトルに含まれているかをチェック
     related_keywords.any? { |keyword| title.include?(keyword.downcase) }
