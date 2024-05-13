@@ -135,6 +135,11 @@ ja:
       top_page: トップページ
     diagnosis:
       title: あなたにおすすめの動画
+  contacts:
+    new:
+      title: お問い合わせ
+    confirmation:
+      title: お問い合わせ確認
   views:
     pagination:
       first: "&laquo; 最初"

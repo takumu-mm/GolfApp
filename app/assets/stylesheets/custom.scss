@@ -228,6 +228,14 @@ header h1 {
   justify-content: center;
 }
 
+.mr-md-3 {
+  margin-right: 10px
+}
+
+.contacts-label {
+  width: 30%;
+}
+
 @media screen and (max-width: 768px) {
   .main-contents { 
     max-width: 80%;
@@ -241,6 +249,19 @@ header h1 {
     height: 100px;
   }
   
+  .responsive-table {
+    width: 100%;
+  }
+  .responsive-table td {
+    display: block; /* セルをブロック要素として扱う */
+    width: 100%;   /* 幅を100%に設定 */
+    box-sizing: border-box; /* ボックスサイジングをborder-boxに */
+    word-break: break-word; /* 単語の途中でも折り返しを許可する */
+  }
+  .responsive-table td.text-right {
+    text-align: left; /* 右揃えのテキストを左揃えに変更 */
+    padding-top: 0.5rem; /* 上部に余白を設定 */
+  }
 }
 
 @media screen and (max-width: 1200px) {

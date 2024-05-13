@@ -1,0 +1,15 @@
+<div class='main-contents'>
+  <h2 class='title-contents'><%= t('contacts.new.title') %></h2>
+  <div class="container-fluid light-blue-container p-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div id="errors">
+          <%= render 'public/contacts/errors', contact: @contact %>
+        </div>
+        <div id="contact_form">
+          <%= render 'public/contacts/form', contact: @contact %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
