@@ -2,11 +2,22 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      contact: お問い合わせ
     attributes:
       user:
         email: メールアドレス
         name: ユーザー名
         password: パスワード
         password_confirmation: パスワード確認
+      contact:
+        name: お名前
+        email: メールアドレス
+        subject: 件名
+        message: メッセージ
+  errors:
+    format: "%{attribute}%{message}"
+    messages:
+      blank: "を入力してください"
+      invalid: "は不正な値です"
         
 
