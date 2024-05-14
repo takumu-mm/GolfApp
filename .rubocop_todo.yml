@@ -134,6 +134,9 @@ Metrics/AbcSize:
 # AllowedMethods: refine
 Metrics/BlockLength:
   Max: 30
+  Exclude:
+    - 'config/environments/*.rb'
+    - 'db/schema.rb'
 
 # Offense count: 2
 # Configuration parameters: AllowedMethods, AllowedPatterns.
