@@ -1,0 +1,20 @@
+.terms-contents h4{
+  margin: 50px 0 40px 0;
+  padding: 15px 0 15px 20px;
+  font-size: 28px;
+  border-left: 5px solid #5db5bd;
+}
+
+.terms-contents ol li{
+  position: relative;
+  list-style: outside decimal;
+  padding: 0 0 0 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .terms-contents h4{
+    margin: 30px 0 40px 0;
+    padding: 15px 0 15px 20px;
+    font-size: 18px;
+  }
+}

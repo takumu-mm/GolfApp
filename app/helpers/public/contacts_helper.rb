@@ -1,2 +1,4 @@
-module Public::ContactsHelper
+module Public
+  module ContactsHelper
+  end
 end

@@ -23,4 +23,7 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  get 'terms', to: 'static_pages#terms'
+  get 'privacy', to: 'static_pages#privacy'
 end
