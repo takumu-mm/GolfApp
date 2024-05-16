@@ -1,13 +1,16 @@
 <footer id='footer' class='footer-bottom'>
+  <div class='navbar-footer'>
+    <div class='nav-item'>
+      <%= link_to t('footer.privacy') , privacy_path, class: 'nav-link' %>
+    </div>
+    <div class='nav-item'>
+      <%= link_to t('footer.terms_of_service') , terms_path, class: 'nav-link' %>
+    </div>
+    <div class='nav-item'>
+      <%= link_to t('footer.contact') , public_contacts_new_path, class: 'nav-link' %>
+    </div>
   </div>
-    <div class='navbar-footer'>
-      <div class='nav-item'>
-        <%= link_to t('footer.privacy') , privacy_path, class: 'nav-link' %>
-      </div>
-      <div class='nav-item'>
-        <%= link_to t('footer.terms_of_service') , terms_path, class: 'nav-link' %>
-      </div>
-      <div class='nav-item'>
-        <%= link_to t('footer.contact') , public_contacts_new_path, class: 'nav-link' %>
-      </div>
+  <div class='footer-copyright'>
+    <p>© 2024 GolfUp. Copyright All Rights Reserved.</p>
+  </div>
 </footer>
