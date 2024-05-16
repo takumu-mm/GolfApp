@@ -13,7 +13,6 @@ gem 'whenever', require: false
 gem 'dotenv-rails'
 
 gem 'devise'
-gem 'devise-i18n'
 
 gem 'carrierwave', '~> 3.0'
 
