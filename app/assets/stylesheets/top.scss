@@ -1,23 +1,38 @@
 .top-wrapper {
   margin: 20px auto;
-  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   width: auto;
+  height: 300px;
   background-color: #fff;
   justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat; /* 画像を繰り返さない */
+  background-position: center; /* 画像を中央に配置 */
+  display: flex;  /* Flexboxを使用 */
+  justify-content: center;  /* 水平方向で中央揃え */
+  align-items: center;  /* 垂直方向で中央揃え */
 }
 
 .top-inner-text {
-  margin: 20px auto;
+  margin: 0;
   padding: 30px;
-  text-align: center
+  text-align: center;
+  font-family: "Fira Sans", sans-serif;
+}
+
+.top-main-text {
+  margin: 0;
+  padding: 30px;
+  text-align: center;
+  font-family: "Fira Sans", sans-serif;
+  color: #fff;
 }
 
 .grid {
   display: grid;
   gap: 25px;
-  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
   margin-top: 20px;
   margin-bottom: 50px;
 }
@@ -32,7 +47,7 @@
 }
 
 .main-wrapper {
-  width: 70%;
+  width: 80%;
   margin:  0 auto;
 }
 
@@ -103,6 +118,7 @@
   }
   .item {
     min-width: 300px; 
+    margin-bottom: 20px;
   }
 }
 
@@ -112,11 +128,13 @@
   }
   .item {
     min-width: 280px; 
+    margin-bottom: 20px;
   }
 }
 
 @media screen and (max-width: 1400px) {
   .item {
     min-width: 280px; 
+    margin-bottom: 20px;
   }
 }

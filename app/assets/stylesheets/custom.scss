@@ -64,20 +64,32 @@ body {
   align-items: center;
 }
 
+.footer-bottom {
+  display: flex;
+  flex-direction: column; /* アイテムを縦に並べる */
+  align-items: center; /* 水平方向の中心に配置 */
+  justify-content: center; /* 垂直方向の中心に配置 */
+  background-color: #222222; /* 背景色を設定 */
+  color: #fff; /* テキストの色を白に */
+}
+
 .navbar-footer{
   display: flex;
-  list-style: none;
   justify-content: center;
-  position: absolute;
   width: 100%;
   margin:0;
   padding:0;
-  background-color: #222222;
   --bs-nav-link-padding-x: 0;
   --bs-nav-link-padding-y: 0.5rem;
   --bs-nav-link-color: var(--bs-navbar-color);
   --bs-nav-link-hover-color: red;
   --bs-nav-link-disabled-color: red;
+}
+
+.footer-copyright {
+  color: #fff;
+  text-align: center;
+  font-size: 0.8em; 
 }
 
 .nav-link {
