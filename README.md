@@ -1,4 +1,4 @@
-# GolfApp
+# GolfUp
 
 ### サービス概要
 このアプリは、ゴルフスキルの向上や問題点の克服に役立つYouTube動画を分かりやすく整理して提供します。ユーザーは自身に最適な動画を簡単に見つけることができ、また、役立った動画をアプリ内で共有することも可能です。この機能により、同じタイプのプレーヤーが参考にした動画を手軽に探すことができます。
@@ -15,18 +15,16 @@
 ユーザーのスキルレベルや具体的な問題点に応じるためにカテゴリーを細かく分けることで、簡単に興味のある動画を見つけられるようにします。また、役立った動画を共有することで、ユーザーが自分に適した動画を容易に見つけることができます。
 以下のようにカテゴリーを細分化します。  
 
-■ まずはこれ
+■ 基本
 - アドレス
 - 握り方
-- バックスイング
-- ダウンスイング
-- フォロースイング
+- 基本スイング
 
 ■ クラブ
 - ドライバー
 - アイアン
 - ウッド
-- UT
+- ユーティリティ
 - パター
 
 ■ 環境
@@ -36,18 +34,18 @@
 - 強風
 - 雨
 
-■ ショット
+■ グリーン周り
 - アプローチ
 - ロブショット
 - 転がし
-- グリーン周り
 
 ■ ショットミス
 - フック
 - スライス
+- ダフリ
+- トップ
 - シャンク
 - チャックリ
-- ダフリ
 - テンプラ
 
 ■ 上達項目
@@ -96,8 +94,7 @@
 ■ フロントエンド: HotWire  
 ■ CSSフレームワーク: bootstrap5系、Silicon（Bootstrapテンプレート）  
 ■ WebAPI: YouTube Data API, Stimulus Autocomplete  
-・ ファイルサーバ:  Active Storage + AWS S3  
-・ セッションサーバ: Redis  
+・ ファイルサーバ:  Active Storage
 ・ データベースサーバ: PostgreSQL  
 ■ その他：  
 ・ VCS: GitHub  
@@ -107,4 +104,4 @@
 https://www.figma.com/file/dDRSntCSUha2qXLgZTLaYC/GolfApp?type=design&node-id=23%3A497&mode=design&t=5EXTu7cNM60d9ObJ-1
 
 ### ER図
-[![Image from Gyazo](https://i.gyazo.com/bd30eed0ad3da48d41247832dd3a64c7.png)](https://gyazo.com/bd30eed0ad3da48d41247832dd3a64c7)
+[![Image from Gyazo](https://i.gyazo.com/a07a6a7ffa3e4a45dc515abbc205bfc5.png)](https://gyazo.com/a07a6a7ffa3e4a45dc515abbc205bfc5)
