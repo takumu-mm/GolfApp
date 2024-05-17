@@ -1,0 +1,12 @@
+<div class='main-contents'>
+  <h1 class='title-contents'><%= t('shared_video.index.title') %></h1>
+  <div class='contents'>
+    <%= link_to 'おすすめの動画を投稿しよう！', new_shared_video_path, class: 'btn btn-primary' %>
+  </div>
+  <ul>
+    <% @shared_videos.each do |video| %>
+      <%= render 'shared_videos/shared_video', shared_video: video %>
+    <% end %>
+  </ul>
+  <%= paginate @shared_videos, theme: 'bootstrap-5' %>
+</div>
