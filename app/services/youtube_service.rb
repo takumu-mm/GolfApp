@@ -60,4 +60,18 @@ class YoutubeService
       end
     end
   end
+
+  def fetch_video_data(youtube_video_id)
+    video_details = YouTube.list_videos('snippet,statistics', id: youtube_video_id)
+    video = video_details.items.first
+    return nil unless video
+
+    {
+      youtube_video_id: video.id,
+      title: video.snippet.title,
+      channel_name: video.snippet.channel_title,
+      view_count: video.statistics.view_count,
+      like_count: video.statistics.like_count
+    }
+  end
 end

@@ -1,0 +1,27 @@
+<div class='main-contents'>
+  <h1 class='title-contents'><%= t('shared_video.new.title') %></h1>
+  <div class='contents'>
+    <%= form_with model: @shared_video, local: true, data: { turbo: false } do |form| %>
+    <div class="mb-3">
+      <%= form.label :youtube_video_id, "URL" %>
+      <%= form.text_field :youtube_video_id, placeholder: "添付方法は以下になります", class: 'form-control' %>
+    </div>
+    <div class='description'>
+        <h5 class="description-title">URLの添付方法</h5>
+        <ol class="description-list">
+          <li>Youtubeを開き、おすすめしたい動画の再生を開始します。</li>
+          <li>動画の下にある [共有]  をクリックします。</li>
+          <li>リンクをコピー: [コピー] ボタンをクリックすると動画リンクがコピーできます。</li>
+          <li>URLの欄にペーストします。</li>
+        </ol>
+      </div>
+    <div class="mb-3">
+      <%= form.label :body, "概要" %>
+      <%= form.text_area :body, placeholder: "動画の内容や役に立った理由など、ご自由に入力してください", class: 'form-control' %>
+    </div>
+      <%= form.submit "投稿", class: 'btn btn-primary' %>
+    <% end %>
+
+    <%= link_to t('shared_video.new.back'), shared_videos_path, class: 'link-container' %>
+  </div>
+</div>

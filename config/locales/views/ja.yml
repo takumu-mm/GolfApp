@@ -135,6 +135,14 @@ ja:
       top_page: トップページ
     diagnosis:
       title: あなたにおすすめの動画
+  shared_video:
+    index:
+      title: みんなのおすすめ動画を共有しよう！
+    new:
+      title: おすすめ動画投稿
+      back: 戻る
+    edit:
+      title: おすすめ動画編集
   contacts:
     new:
       title: お問い合わせ

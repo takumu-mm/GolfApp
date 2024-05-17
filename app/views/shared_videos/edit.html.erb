@@ -1,0 +1,18 @@
+<div class='main-contents'>
+  <h1 class='title-contents'><%= t('shared_video.edit.title') %></h1>
+  <div class='contents'>
+    <%= form_with model: @shared_video, local: true do |form| %>
+      <div class="mb-3">
+        <%= form.label :youtube_video_id, "YouTube Video ID" %>
+        <%= form.text_field :youtube_video_id, value: @shared_video.video.youtube_video_id, class: 'form-control', disabled: true %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :body, "概要" %>
+        <%= form.text_area :body, class: 'form-control' %>
+      </div>
+
+      <%= form.submit "更新", class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
