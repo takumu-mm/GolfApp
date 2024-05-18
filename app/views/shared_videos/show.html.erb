@@ -7,11 +7,6 @@
       <p class="mb-0 me-3">再生回数: <%= unit_to_number(@shared_video.video.view_count) %> 回</p>
       <p class="mb-0"><i class="bi bi-hand-thumbs-up-fill"></i> <%= unit_to_number(@shared_video.video.like_count) %></p>
     </div>
-    <div class="video-body">
-      <h4>概要</h4>
-      <div class="divider"></div> <!-- 追加した区切り線 -->
-      <p><%= @shared_video.body %></p>
-    </div>
     <!-- プロフィール情報表示 -->
     <div class='user-info d-flex align-items-center mt-2'>
       <strong class='user-name me-2'><%= @shared_video.user.name %></strong>
@@ -28,6 +23,11 @@
           <% end %>
         </div>
       <% end %>
+    </div>
+    <div class="video-body">
+      <h4>概要</h4>
+      <div class="divider"></div> <!-- 追加した区切り線 -->
+      <p><%= @shared_video.body %></p>
     </div>
     <!-- 編集と削除ボタン（自分の投稿のみ表示） -->
     <% if current_user == @shared_video.user %>
