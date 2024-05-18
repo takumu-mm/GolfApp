@@ -115,7 +115,7 @@ ja:
   profiles:
     edit:
       title: "プロフィール編集"
-      score: "アベレージスコア"
+      score: "ベストスコア"
       ball_type: "持ち球"
       sports_experience: "スポーツ経験"
       strengths: 強み
@@ -124,7 +124,7 @@ ja:
       profile_show: 戻る
     show:
       title: "マイページ"
-      score: "アベレージスコア"
+      score: "ベストスコア"
       ball_type: "持ち球"
       strengths: 強み
       weakness: 改善点
@@ -137,7 +137,7 @@ ja:
       title: あなたにおすすめの動画
   shared_video:
     index:
-      title: みんなのおすすめ動画を共有しよう！
+      title: おすすめ動画を共有しよう！
     new:
       title: おすすめ動画投稿
       back: 戻る

@@ -27,3 +27,35 @@
   color: #007bff;
   margin-right: 8px;
 }
+
+.profile-tag {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #fff;
+}
+
+.video-body {
+  background-color: #f8f9fa; /* 薄い背景色 */
+  border: 1px solid #dee2e6; /* 外枠 */
+  padding: 20px; /* 内側の余白 */
+  margin-top: 20px; /* 上の余白 */
+  border-radius: 8px; /* 角の丸み */
+}
+
+.video-body h4 {
+  margin-bottom: 10px; /* タイトルの下の余白 */
+}
+
+.video-body p {
+  font-size: 0.8rem; /* 文字のサイズをさらに小さく */
+  color: #343a40; /* 文字色 */
+  margin-bottom: 15px; /* 概要と線の間の余白 */
+}
+
+.divider {
+  border-top: 1px solid #dee2e6; /* 水平線 */
+  margin-top: 10px; /* 線の上の余白 */
+  margin-bottom: 20px; /* 線の下の余白 */
+}
