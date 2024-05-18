@@ -1,22 +1,30 @@
 <li class='contents'>
   <h5><%= shared_video.video.title %></h5>
   <iframe class="responsive-iframe" src="https://www.youtube.com/embed/<%= shared_video.video.youtube_video_id %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <div class='overview'>
-    <p>再生回数: <%= unit_to_number(shared_video.video.view_count) %> 回</p>
-    <p><i class="bi bi-hand-thumbs-up-fill"></i> <%= unit_to_number(shared_video.video.like_count) %></p>
+  <div class='overview d-flex justify-content-start align-items-center'>
+    <p class="mb-0 me-3">再生回数: <%= unit_to_number(shared_video.video.view_count) %> 回</p>
+    <p class="mb-0"><i class="bi bi-hand-thumbs-up-fill"></i> <%= unit_to_number(shared_video.video.like_count) %></p>
   </div>
   <!-- プロフィール情報表示 -->
-  <% if shared_video.user.profile %>
-    <div class='profile-tags'>
-      <% ['score', 'ball_type', 'sports_experience'].each do |attr| %>
-        <% if shared_video.user.profile[attr].present? %>
-          <span class="profile-tag"><%= shared_video.user.profile[attr] %></span>
+  <div class='user-info d-flex align-items-center mt-2'>
+    <strong class='user-name me-2'><%= shared_video.user.name %></strong>
+    <% if shared_video.user.profile %>
+      <div class='profile-tags'>
+        <% if shared_video.user.profile['score'].present? %>
+          <span class="profile-tag badge bg-primary ms-2"><%= shared_video.user.profile['score'] %></span>
         <% end %>
-      <% end %>
-    </div>
-  <% end %>
+        <% if shared_video.user.profile['ball_type'].present? %>
+          <span class="profile-tag badge bg-success ms-2"><%= shared_video.user.profile['ball_type'] %>ボール</span>
+        <% end %>
+        <% if shared_video.user.profile['sports_experience'].present? %>
+          <span class="profile-tag badge bg-warning ms-2"><%= shared_video.user.profile['sports_experience'] %>経験</span>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 
-  <%= link_to '詳細を見る', shared_video_path(shared_video), class: 'btn btn-primary' %>
+
+  <%= link_to '動画詳細（コメント〇件）', shared_video_path(shared_video), class: 'btn btn-show' %>
   <!-- 編集と削除ボタン（自分の投稿のみ表示） -->
   <% if current_user == shared_video.user %>
     <%= link_to '編集', edit_shared_video_path(shared_video), class: 'btn btn-info' %>
