@@ -1,7 +1,6 @@
 <div class='main-contents'>
-  <h1 class='title-contents'>動画の詳細</h1>
+  <h1 class='title-contents'><%= @shared_video.video.title %></h1>
   <div class="contents">
-    <h5><%= @shared_video.video.title %></h5>
     <iframe class="responsive-iframe" src="https://www.youtube.com/embed/<%= @shared_video.video.youtube_video_id %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <div class='overview d-flex justify-content-start align-items-center'>
       <p class="mb-0 me-3">再生回数: <%= unit_to_number(@shared_video.video.view_count) %> 回</p>
@@ -34,7 +33,18 @@
       <%= link_to '編集', edit_shared_video_path(@shared_video), class: 'btn btn-info' %>
       <%= link_to '削除', shared_video_path(@shared_video), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
     <% end %>
-    
-    <%= link_to '動画一覧に戻る', shared_videos_path, class: 'btn btn-primary' %>
+    <div class='comment-contents'>    
+      <!-- コメントフォーム -->
+      <%= render "comments/form", comment: Comment.new, shared_video: @shared_video %>
+      <!-- コメントエリア -->
+      <div class="row">
+        <table class="table">
+          <tbody id="table-comment">
+              <%= render @comments || [] %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <%= link_to '動画一覧に戻る', shared_videos_path, class: 'link-container' %>
   </div>
 </div>

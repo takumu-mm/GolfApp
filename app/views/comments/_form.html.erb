@@ -1,0 +1,19 @@
+<div class="row mb-3" id="comment-form-<%= @comment.id %>">
+  <div class="col-md-12">
+    <div id="errors">
+      <%= render 'shared/error_messages', object: @comment %>
+    </div>
+    <%= form_with model: [ @shared_video, @comment ], local: true, class: "d-flex align-items-end" do |f| %>
+      <%= f.hidden_field :video_id, value: @shared_video.video_id %>
+      <div class="form-group flex-grow-1 me-2">
+        <%= f.label :body, 'コメント', class: "form-label" %>
+        <%= f.text_area :body, class: "form-control shadow-sm", placeholder: 'コメントを入力してください...', rows: 3 %>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary px-3 py-2">
+          <i class="bi bi-send"></i>
+        </button>
+      </div>
+    <% end %>
+  </div>
+</div>

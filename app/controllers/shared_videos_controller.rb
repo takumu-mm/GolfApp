@@ -3,10 +3,14 @@ class SharedVideosController < ApplicationController
   before_action :set_shared_video, only: [:show, :edit, :update, :destroy]
 
   def index
-    @shared_videos = SharedVideo.includes(:video, :user).page(params[:page]).per(10)
+    @shared_videos = SharedVideo.includes(:video, :user, :comments).page(params[:page]).per(10)
   end
 
-  def show; end
+  def show
+    @shared_video = SharedVideo.find(params[:id])
+    @comment = Comment.new
+    @comments = @shared_video.comments.includes(:user).order(created_at: :desc)
+  end
 
   def new
     @shared_video = SharedVideo.new

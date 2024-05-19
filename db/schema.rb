@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_17_010712) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_19_022359) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,6 +32,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_17_010712) do
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_category_videos_on_category_id"
     t.index ["video_id"], name: "index_category_videos_on_video_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "video_id", null: false
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "shared_video_id", null: false
+    t.index ["shared_video_id"], name: "index_comments_on_shared_video_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+    t.index ["video_id"], name: "index_comments_on_video_id"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -90,5 +102,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_17_010712) do
 
   add_foreign_key "category_videos", "categories"
   add_foreign_key "category_videos", "videos"
+  add_foreign_key "comments", "shared_videos"
+  add_foreign_key "comments", "users"
+  add_foreign_key "comments", "videos"
   add_foreign_key "profiles", "users"
 end

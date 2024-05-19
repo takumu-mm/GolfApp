@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_one :profile
   has_many :shared_videos
+  has_many :comments
   has_many :shared_videos, through: :shared_videos, source: :video
   validates :name, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 2, maximum: 50 }
   validates :email, presence: true, uniqueness: { case_sensitive: false, unless: lambda { |user|
@@ -11,4 +12,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def own?(object)
+    id == object&.user_id
+  end
 end
