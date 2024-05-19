@@ -3,6 +3,7 @@ ja:
     models:
       user: ユーザー
       contact: お問い合わせ
+      comment: コメント
     attributes:
       user:
         email: メールアドレス
@@ -14,6 +15,8 @@ ja:
         email: メールアドレス
         subject: 件名
         message: メッセージ
+      comment:
+        body: コメント内容
   errors:
     format: "%{attribute}%{message}"
     messages:

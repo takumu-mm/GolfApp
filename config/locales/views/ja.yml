@@ -15,6 +15,11 @@ ja:
       deleted: "%{item}を削除しました"
       errors_count: "%{count} 件のエラーメッセージがあります"
       profile_update: プロフィールを更新しました
+  errors:
+    messages:
+      not_saved: "保存できませんでした。%{count}つのエラーがあります。"
+      empty: "入力してください"
+      too_long: "%{count}文字以下で入力してください"
   helpers:
     submit:
       create: 登録

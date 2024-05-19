@@ -23,8 +23,7 @@
     <% end %>
   </div>
 
-
-  <%= link_to '動画詳細（コメント〇件）', shared_video_path(shared_video), class: 'btn btn-show' %>
+  <%= link_to "動画詳細（コメント#{shared_video.comments.count}件）", shared_video_path(shared_video), class: 'btn btn-show' %>
   <!-- 編集と削除ボタン（自分の投稿のみ表示） -->
   <% if current_user == shared_video.user %>
     <%= link_to '編集', edit_shared_video_path(shared_video), class: 'btn btn-info' %>

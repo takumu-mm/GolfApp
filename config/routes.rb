@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root "static_pages#top"
   resources :categories, param: :name, only: [:show]
-  resources :shared_videos
+  resources :shared_videos do
+    resources :comments, only: [:create, :destroy]
+  end
   resource :profile, only: [:show, :edit, :update] do
     get 'diagnosis', on: :collection, as: 'diagnosis'
   end
