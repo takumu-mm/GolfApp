@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_video
   before_action :set_comment, only: [:destroy]
-  
 
   def create
     @shared_video = SharedVideo.find(params[:shared_video_id])

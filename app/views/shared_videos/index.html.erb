@@ -1,5 +1,28 @@
 <div class='main-contents'>
   <h1 class='title-contents'><%= t('shared_video.index.title') %></h1>
+  <div class='contents card p-4'>
+    <%= form_with url: shared_videos_path, method: :get, local: true, class: 'row g-3' do |form| %>
+      <div class='col-md-6'>
+        <!-- ユーザーとプロファイル情報の集約された検索 -->
+        <div class="input-group">
+          <%= form.text_field :user_profile_info, placeholder: 'ユーザー名、スコア、持ち球、経験', class: 'form-control', aria: { label: 'User Profile Info' } %>
+          <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+        </div>
+      </div>
+      
+      <div class='col-md-6'>
+        <!-- 動画のタイトルや内容の集約された検索 -->
+        <div class="input-group">
+          <%= form.text_field :video_info, placeholder: '動画のタイトルや内容', class: 'form-control', aria: { label: 'Video Info' } %>
+          <span class="input-group-text"><i class="bi bi-camera-reels-fill"></i></span>
+        </div>
+      </div>
+      
+      <div class='col-12 text-center'>
+        <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
+      </div>
+    <% end %>
+  </div>
   <div class='contents'>
     <%= link_to 'おすすめの動画を投稿しよう！', new_shared_video_path, class: 'btn btn-primary' %>
   </div>

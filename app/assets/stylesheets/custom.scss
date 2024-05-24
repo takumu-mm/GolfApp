@@ -324,6 +324,26 @@ header h1 {
   --bs-btn-disabled-border-color: #198754;
 }
 
+.btn_post {
+  width: 100%;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	margin: auto;
+	padding: 1rem 4rem;
+	font-weight: bold;
+	background-image: linear-gradient(to right, #27acd9 0%, #b4e12b 100%);
+	color: #fff;
+	border: 2px solid #fff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+	-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+	transition: 0.5s;
+}
+.btn_post:hover {
+	color: #fff;
+	background-image: linear-gradient(to left, #27acd9 0%, #b4e12b 100%);
+}
+
 /*ページネーション自体のデザイン*/
 .pagination>li>a {          
   border: none;     /*枠線をなくす*/
