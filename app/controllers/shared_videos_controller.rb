@@ -1,9 +1,22 @@
 class SharedVideosController < ApplicationController
   before_action :authenticate_user!
   before_action :set_shared_video, only: [:show, :edit, :update, :destroy]
+  before_action :load_form_options, only: [:index]
 
   def index
     @shared_videos = SharedVideo.includes(:video, :user, :comments).page(params[:page]).per(10)
+
+    if params[:user_profile_info].present?
+      # ユーザーとプロファイル情報に基づく検索
+      query = params[:user_profile_info].downcase
+      @shared_videos = search_by_user_profile_info(query)
+    end
+
+    return unless params[:video_info].present?
+
+    # 動画情報に基づく検索
+    query = params[:video_info].downcase
+    @shared_videos = search_by_video_info(query)
   end
 
   def show
@@ -88,5 +101,23 @@ class SharedVideosController < ApplicationController
       flash.now[:alert] = @shared_video.errors.full_messages.join(', ')
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def load_form_options
+    @score_options = I18n.t('options.score').map { |key, value| [value, key] }
+  end
+
+  def search_by_user_profile_info(query)
+    @shared_videos.joins(user: :profile).where(
+      "LOWER(users.name) LIKE :query OR LOWER(profiles.ball_type) LIKE :query OR LOWER(profiles.sports_experience) LIKE :query OR profiles.score = :exact",
+      query: "%#{query}%", exact: query
+    )
+  end
+
+  def search_by_video_info(query)
+    @shared_videos.joins(:video).where(
+      "LOWER(videos.title) LIKE :query OR LOWER(shared_videos.body) LIKE :query",
+      query: "%#{query}%"
+    )
   end
 end
