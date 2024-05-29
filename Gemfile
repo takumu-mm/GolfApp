@@ -17,6 +17,8 @@ gem 'devise-i18n'
 
 gem 'carrierwave', '~> 3.0'
 
+gem 'cloudinary'
+
 gem 'ransack'
 
 gem 'kaminari', '~> 1.2', '>= 1.2.1'
