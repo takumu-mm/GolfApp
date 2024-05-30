@@ -4,8 +4,8 @@ class Profile < ApplicationRecord
   accepts_nested_attributes_for :user
   mount_uploader :avatar, AvatarUploader
 
-  serialize :strengths, Array, coder: YAML
-  serialize :weakness, Array, coder: YAML
+  serialize :strengths, type: Array, coder: YAML
+  serialize :weakness, type: Array, coder: YAML
 
   def translated_strengths
     strengths.map do |s_id|
