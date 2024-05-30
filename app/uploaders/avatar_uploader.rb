@@ -21,6 +21,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Cloudinaryの公開IDを設定（ユニークな識別子）
   def public_id
-    return model.id
+    model.id
   end
 end
