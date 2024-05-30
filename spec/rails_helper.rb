@@ -69,4 +69,5 @@ RSpec.configure do |config|
 
   # FactoryBotの構文メソッドを追加
   config.include FactoryBot::Syntax::Methods
+  config.include Devise::Test::IntegrationHelpers, type: :system
 end
