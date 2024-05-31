@@ -17,6 +17,8 @@ gem 'devise-i18n'
 
 gem 'carrierwave', '~> 3.0'
 
+gem 'cloudinary'
+
 gem 'ransack'
 
 gem 'kaminari', '~> 1.2', '>= 1.2.1'
@@ -70,6 +72,11 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rubocop-rspec', require: false
+  gem 'rubocop-factory_bot', require: false
 end
 
 group :development do
