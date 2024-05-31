@@ -1,0 +1,5 @@
+<% results.each do |result| %>
+  <li class="autocomplete-result list-group-item" data-autocomplete-value="<%= result.id %>" data-autocomplete-label="<%= result.name %>">
+    <%= result.name %>
+  </li>
+<% end %>

@@ -21,6 +21,10 @@ class Profile < ApplicationRecord
     end.compact
   end
 
+  def self.ransackable_attributes(auth_object = nil)
+    ["score", "ball_type", "sports_experience"]
+  end
+
   private
 
   def translate_category_name(name)
