@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'videos/autocomplete'
+  get 'users/autocomplete'
   root "static_pages#top"
   resources :categories, param: :name, only: [:show]
   resources :shared_videos do
@@ -29,4 +31,6 @@ Rails.application.routes.draw do
 
   get 'terms', to: 'static_pages#terms'
   get 'privacy', to: 'static_pages#privacy'
+  get 'users/autocomplete', to: 'users#autocomplete', as: :autocomplete_user
+  get 'videos/autocomplete', to: 'videos#autocomplete', as: :autocomplete_video
 end

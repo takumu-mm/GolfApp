@@ -373,6 +373,25 @@ header h1 {
   width: 30%;
 }
 
+.autocomplete-result:hover {
+  background-color: #f8f9fa; /* 薄いグレーの背景色 */
+  cursor: pointer;
+}
+
+.input-group {
+  position: relative;
+}
+
+/* autocompleteの結果表示部分のスタイル */
+.list-group[data-autocomplete-target="results"] {
+  position: absolute;
+  top: 100%; /* input要素の直下に配置 */
+  left: 0; /* 左端に揃える */
+  width: 100%; /* 親要素の幅に合わせる */
+  z-index: 1000; /* 他の要素の上に表示 */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* 影を追加して立体感を出す */
+}
+
 @media screen and (max-width: 768px) {
   .main-contents { 
     max-width:  100%;

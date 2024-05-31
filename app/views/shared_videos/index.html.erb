@@ -4,17 +4,21 @@
     <%= form_with url: shared_videos_path, method: :get, local: true, class: 'row g-3' do |form| %>
       <div class='col-md-6'>
         <!-- ユーザーとプロファイル情報の集約された検索 -->
-        <div class="input-group">
-          <%= form.text_field :user_profile_info, placeholder: 'プロフィール情報', class: 'form-control', aria: { label: 'User Profile Info' } %>
-          <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+        <div class="input-group" data-controller="autocomplete" data-autocomplete-url-value="<%= autocomplete_user_path %>" role="combobox" style="position: relative;">
+          <%= form.text_field :user_profile_info, placeholder: 'プロフィール情報', class: 'form-control', aria: { label: 'User Profile Info' }, data: { autocomplete_target: 'input' } %>
+          <%= form.hidden_field :user_profile_id, data: { autocomplete_target: 'hidden' } %>
+          <span class="input-group-text" style="position: absolute; right: 0; top: 0;"><i class="bi bi-person-fill"></i></span>
+          <ul class="list-group bg-white absolute w-full md:text-sm max-w-max" data-autocomplete-target="results" style="top: 100%; left: 0;"></ul>
         </div>
       </div>
-      
+
       <div class='col-md-6'>
         <!-- 動画のタイトルや内容の集約された検索 -->
-        <div class="input-group">
-          <%= form.text_field :video_info, placeholder: '動画のタイトルや内容', class: 'form-control', aria: { label: 'Video Info' } %>
-          <span class="input-group-text"><i class="bi bi-camera-reels-fill"></i></span>
+        <div class="input-group" data-controller="autocomplete" data-autocomplete-url-value="<%= autocomplete_video_path %>" role="combobox" style="position: relative;">
+          <%= form.text_field :video_info, placeholder: '動画のタイトルや内容', class: 'form-control', aria: { label: 'Video Info' }, data: { autocomplete_target: 'input' } %>
+          <%= form.hidden_field :video_id, data: { autocomplete_target: 'hidden' } %>
+          <span class="input-group-text" style="position: absolute; right: 0; top: 0;"><i class="bi bi-camera-reels-fill"></i></span>
+          <ul class="list-group bg-white absolute w-full md:text-sm max-w-max" data-autocomplete-target="results" style="top: 100%; left: 0;"></ul>
         </div>
       </div>
       
@@ -26,8 +30,8 @@
   <div class='contents'>
     <%= link_to 'おすすめの動画を投稿しよう！', new_shared_video_path, class: 'btn btn-primary' %>
   </div>
-    <% @shared_videos.each do |video| %>
-      <%= render 'shared_videos/shared_video', shared_video: video %>
-    <% end %>
+  <% @shared_videos.each do |video| %>
+    <%= render 'shared_videos/shared_video', shared_video: video %>
+  <% end %>
   <%= paginate @shared_videos, theme: 'bootstrap-5' %>
 </div>
