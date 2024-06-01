@@ -7,9 +7,7 @@ class UsersController < ApplicationController
 
     @results = []
     users.each do |user|
-      if user.name.downcase.include?(term.downcase)
-        @results << OpenStruct.new(id: user.id, name: user.name)
-      end
+      @results << OpenStruct.new(id: user.id, name: user.name) if user.name.downcase.include?(term.downcase)
     end
 
     profiles.each do |profile|
@@ -22,8 +20,8 @@ class UsersController < ApplicationController
       end
     end
 
-    @results = @results.uniq { |result| result.name }.first(5)
-    
+    @results = @results.uniq(&:name).first(5)
+
     render partial: 'shared_videos/autocomplete_results', locals: { results: @results }
   end
 end

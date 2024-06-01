@@ -21,8 +21,8 @@ class Profile < ApplicationRecord
     end.compact
   end
 
-  def self.ransackable_attributes(auth_object = nil)
-    ["score", "ball_type", "sports_experience"]
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[score ball_type sports_experience]
   end
 
   private

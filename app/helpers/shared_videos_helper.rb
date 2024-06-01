@@ -1,2 +1,0 @@
-module SharedVideosHelper
-end

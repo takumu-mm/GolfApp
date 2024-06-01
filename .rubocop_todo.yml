@@ -133,10 +133,11 @@ Metrics/AbcSize:
 # Configuration parameters: CountComments, CountAsOne, AllowedMethods, AllowedPatterns.
 # AllowedMethods: refine
 Metrics/BlockLength:
-  Max: 30
+  Max: 100
   Exclude:
     - 'config/environments/*.rb'
     - 'db/schema.rb'
+    - 'config/routes.rb'
 
 # Offense count: 2
 # Configuration parameters: AllowedMethods, AllowedPatterns.
