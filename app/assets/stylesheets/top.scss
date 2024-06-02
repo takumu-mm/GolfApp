@@ -21,6 +21,18 @@
   font-family: "Fira Sans", sans-serif;
 }
 
+.top-inner-text h3, .top-inner-text h4 {
+  margin-bottom: 20px;  /* タイトルと段落の間のスペースを増やす */
+  color: #333;  /* タイトルの色を少し濃くする */
+}
+
+.top-inner-text p {
+  margin-bottom: 15px;  /* 段落間のスペースを増やす */
+  font-size: 16px;  /* フォントサイズを調整する */
+  color: #666;  /* 段落の文字色を少し薄くする */
+}
+
+
 .top-main-text {
   margin: 0;
   padding: 30px;
@@ -44,6 +56,8 @@
   background-color: #fff;
   justify-content: center;
   min-width: 350px; 
+  position: relative; /* バッジの位置決めの基準点として設定 */
+  padding-top: 30px; /* バッジのスペースを確保 */
 }
 
 .main-wrapper {
@@ -56,6 +70,25 @@
   margin-bottom: 10px;
 }
 
+.login-required {
+  position: absolute; /* 絶対位置指定 */
+  top: 10px; /* 上から10pxの位置 */
+  left: 10px; /* 左から10pxの位置 */
+  background-color: #ff4757; /* バッジの背景色 */
+  color: white; /* アイコンの色 */
+  padding: 5px 10px; /* 内側の余白 */
+  border-radius: 50%; /* 円形にする */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px; /* アイコンの大きさ */
+  height: 24px; /* アイコンの大きさ */
+  font-size: 12px; /* アイコンのフォントサイズ */
+}
+
+.mobile-br {
+  display: none; /* デフォルトでは非表示 */
+}
 
 @media screen and (max-width: 768px) {
   .grid {
@@ -64,6 +97,17 @@
   .item {
     min-width: 300px; 
     margin-bottom: 20px;
+  }
+
+  .top-inner-text p {
+    font-size: 16px;  /* タブレットでのフォントサイズを小さくする */
+  }
+
+  .top-inner-text h4 {
+    font-size: 20px;  /* タブレットでのフォントサイズを小さくする */
+  }
+  .mobile-br {
+    display: inline;
   }
 }
 
