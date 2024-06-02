@@ -1,31 +1,44 @@
 <div class='main-wrapper'>
   <div class="top-wrapper">
     <div class='top-inner-text'>
-      <h3>あなたに最適なゴルフレッスン動画を</h3>
-
-      <p>みんなが参考にしているゴルフ動画を知りたい ! </p>
-      <p>ゴルフ動画が多すぎてどれを見ればいいかわからない</p>
+      <h3>あなたに最適な<br class="mobile-br">ゴルフレッスン動画を</h3>
+      <p>～こんなあなたにおすすめ～</p>
+      <p>自分に合うゴルフ動画を知りたい</p>
+      <p>みんなが参考になったゴルフ動画を知りたい ! </p>
+      <p>ゴルフ動画が多すぎてどの動画を参考にすればいいかわからない</p>
     </div>
   </div>
   <div class='grid'>
     <div class='item top-inner-text'>
-      <h4>各カテゴリーのおすすめ動画</h4>
-      <p>29カテゴリーに分けられており、ゴルフの基礎から応用まで、おすすめのゴルフ動画を提供します</p>
+      <h4>カテゴリー別ゴルフ動画</h4>
+      <p>29カテゴリーに分けられており、ゴルフの基礎から応用までおすすめのゴルフ動画を提供します</p>
     </div>
     <div class='item top-inner-text'>
+      <% unless user_signed_in? %>
+        <div class="login-required"><i class="bi bi-lock"></i></div>
+      <% end %>
       <h4>おすすめゴルフ動画診断</h4>
       <p>プロフィール情報を入力するだけで、あなたにピッタリの動画をおすすめします</p>
     </div>
     <div class='item top-inner-text'>
       <h4>おすすめ動画を共有</h4>
+      <% unless user_signed_in? %>
+        <div class="login-required"><i class="bi bi-lock"></i></div>
+      <% end %>
       <p>自分が役立った動画をみんなとシェアしよう！</p>
     </div>
     <div class='item top-inner-text'>
-      <h4>自分と同じようなタイプかわかる</h4>
-      <p>投稿者の特徴がタグとして表示され、自分と同じタイプの人がおすすめする動画が分かります</p>
+      <% unless user_signed_in? %>
+        <div class="login-required"><i class="bi bi-lock"></i></div>
+      <% end %>
+      <h4>投稿したユーザーの特徴</h4>
+      <p>ユーザーの特徴がタグとして表示され、自分と同じタイプの人がおすすめする動画が分かります</p>
     </div>
     <div class='item top-inner-text'>
-      <h4>知りたいおすすめ動画を検索</h4>
+      <% unless user_signed_in? %>
+        <div class="login-required"><i class="bi bi-lock"></i></div>
+      <% end %>
+      <h4>おすすめ動画を検索</h4>
       <p>投稿内容やユーザーの特徴で、気になる動画を検索できます</p>
     </div>
     <% unless user_signed_in? %>
