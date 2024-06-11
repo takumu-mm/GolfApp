@@ -1,5 +1,7 @@
 module ApplicationHelper
   def unit_to_number(number)
+    return "0" if number.nil?  # nilの場合は"0"を返す
+
     case number
     when 0..9999
       number.to_s
