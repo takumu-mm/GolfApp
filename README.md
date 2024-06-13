@@ -94,7 +94,7 @@
 ■ フロントエンド: HotWire  
 ■ CSSフレームワーク: bootstrap5系、Silicon（Bootstrapテンプレート）  
 ■ WebAPI: YouTube Data API, Stimulus Autocomplete  
-・ ファイルサーバ:  Active Storage
+・ ファイルサーバ:  Active Storage, Cloudinary
 ・ データベースサーバ: PostgreSQL  
 ■ その他：  
 ・ VCS: GitHub  
